@@ -1,30 +1,26 @@
-package klasy;
+package org.example.klasy;
 
 import interfejsyy.Konto;
-import Enum.AccountType;
-import org.example.*;
+import org.example.Enum.AccountType;
+
 public class Bank {
 
 
 
-    public Konto StworzKonto(String typ, klasy.FabrykaKont fabrykaKont)
+    public Konto StworzKonto(String typ, klasy.AccountFactory accountFactory)
     {
         System.out.println(typ + "Bank");
 
         if("1".equals(typ))
         {
-            Konto kontoBiezace =fabrykaKont.utworzKonto(AccountType.RodzajKont.BIEZACE.getNumber());
+            Konto kontoBiezace = accountFactory.utworzKonto(AccountType.AccountTypes.BIEZACE.getNumber());
             return kontoBiezace;
 
         }
-        else if("2".equals(typ))
-        {
-            Konto kontoEmerytalne= fabrykaKont.utworzKonto((AccountType.RodzajKont.EMERYTALNE.getNumber()));
-            return kontoEmerytalne;
-        }
+
         else if("3".equals(typ))
         {
-            Konto kontoOszczedniosciowe = fabrykaKont.utworzKonto((AccountType.RodzajKont.OSZCZEDNIOSCIOWE.getNumber()));
+            Konto kontoOszczedniosciowe = accountFactory.utworzKonto((AccountType.AccountTypes.OSZCZEDNIOSCIOWE.getNumber()));
             return kontoOszczedniosciowe;
 
         }

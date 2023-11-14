@@ -2,12 +2,12 @@ package Enum;
 
 public class UserType {
 
-    public enum RodzajeUzytkownikow {
+    public enum TypeOfUsers {
         ADMINISTRATOR("1"), KLIENT("2");
 
         private String number;
 
-        RodzajeUzytkownikow(String number) {
+        TypeOfUsers(String number) {
             this.number = number;
         }
 

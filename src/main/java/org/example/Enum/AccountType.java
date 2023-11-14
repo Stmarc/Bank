@@ -1,13 +1,13 @@
-package Enum;
+package org.example.Enum;
 
 public class AccountType {
 
-    public enum RodzajKont {
-        BIEZACE("1"), EMERYTALNE("2"), OSZCZEDNIOSCIOWE("3");
+    public enum AccountTypes {
+        BIEZACE("1"), OSZCZEDNIOSCIOWE("3");
 
         private String number;
 
-        RodzajKont(String number) {
+        AccountTypes(String number) {
             this.number = number;
         }
 

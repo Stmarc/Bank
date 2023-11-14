@@ -11,10 +11,16 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.query.Query;
 
 import java.util.List;
-public class PracownikCRUD  extends HumanCrud{
+public class HumanCrud {
+    public SessionFactory sessionFactory;
+    public HumanCrud() {
+        StandardServiceRegistry ssr = new StandardServiceRegistryBuilder()
+                .configure("hibernate.cfg.xml").build();
 
-    public PracownikCRUD() {
-        super();
+        Metadata metadata = new MetadataSources(ssr).getMetadataBuilder().build();
+        sessionFactory = metadata.getSessionFactoryBuilder().build();
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
     }
     public boolean getKonta(String haslo,String login)
     {
@@ -36,10 +42,10 @@ public class PracownikCRUD  extends HumanCrud{
         else {
             return true;
         }
-        }
-
-
-
-
     }
+
+
+
+
+}
 
